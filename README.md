@@ -19,4 +19,4 @@ Make sure developer mode is enabled.
 Click 'Load unpacked extension'
 
 ### Version
-0.1.0
+0.1.1
