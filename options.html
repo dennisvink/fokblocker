@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FOKBlocker Chrome Options</title>
+  <style>
+    body, td {
+        font-family:helvetica, arial, sans-serif;
+        font-size:80%;
+        margin:10px;
+    }
+
+    h1.header {
+        font-size: 156%;
+        padding-bottom: 43px;
+        padding-left: 75px;
+        padding-top: 40px;
+    }
+
+    td.field input {
+        width: 25em;
+    }
+
+    td.label {
+        width: 20em;
+    }
+
+    table#paths-table {
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    input.path-label {
+        width: 15em;
+    }
+
+    input.path-directory {
+        width: 24em;
+    }
+
+    div.wrapper {
+        margin-top: 1em;
+    }
+
+    input[type = submit] {
+        font-weight : bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="section">
+    <div class="header">FOKBlocker Chrome Options</div>
+    <div class="content">
+      <table>
+        <tbody>
+          <tr id="event-name">
+            <td class="label">Blocked users (comma seperated, no spaces)</td>
+            <td class="field"><input type="text" id="blocklist"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id="status"></div>
+  <button id="save">Save</button>
+
+  <script src="options.js"></script>
+</body>
+</html>
