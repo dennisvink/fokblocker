@@ -10,7 +10,7 @@ chrome.storage.sync.get({
   var i;
 
   for (i = 0; i < blockList.length; ++i) {
-    script = script + "setInterval(function() { $(\"* > [data-member='"+blockList[i]+"']\").hide(); }, 1000);";
+    script = script + "setInterval(function() { $(\"* > [data-member='"+blockList[i]+"']\").hide(); }, 1000); $('a').filter(function(index) { return $(this).text() === \""+blockList[i]+"\"; }).parent().parent().html('Weggejorist en opgerot -- WAHRHEIT');";
   }
 
   var scriptElement = document.createElement("script");
