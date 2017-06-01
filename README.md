@@ -1,6 +1,6 @@
 # FOKBlocker Chrome
 
-This chrome plugin hides posts from particular FOK! users.
+This chrome plugin hides posts from particular FOK! users, quotes included.
 
 Shout out to:
 
@@ -19,4 +19,4 @@ Make sure developer mode is enabled.
 Click 'Load unpacked extension'
 
 ### Version
-0.1.1
+0.1.2
