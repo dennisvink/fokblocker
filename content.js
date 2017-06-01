@@ -9,6 +9,17 @@ chrome.storage.sync.get({
   var script = "";
   var i;
 
+  
+  $('.onlineimg').click(function() {
+    var username = $(this).next().find('.username').text();
+    chrome.storage.sync.set({
+        blockList: items.blockList + ',' + username
+    });    
+    $("* > [data-member='"+username+"'").hide();
+    $('a').filter(function(undex) { $(this).text() === username; }).parent().parent().html('Weggejorist en opgerot -- WAHRHEIT');
+    location.reload();
+  });
+
   for (i = 0; i < blockList.length; ++i) {
     script = script + "setInterval(function() { $(\"* > [data-member='"+blockList[i]+"']\").hide(); $('a').filter(function(index) { return $(this).text() === \""+blockList[i]+"\"; }).parent().parent().html('Weggejorist en opgerot -- WAHRHEIT'); }, 250);";
   }
