@@ -10,7 +10,7 @@ chrome.storage.sync.get({
   var i;
 
   
-  $('.onlineimg').click(function() {
+  $('.abo').click(function() {
     var username = $(this).next().find('.username').text();
     chrome.storage.sync.set({
         blockList: items.blockList + ',' + username
