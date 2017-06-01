@@ -11,7 +11,7 @@ chrome.storage.sync.get({
 
   
   $('.abo').click(function() {
-    var username = $(this).next().find('.username').text();
+    var username = $(this).parent().parent().parent().find('.username').text();
     chrome.storage.sync.set({
         blockList: items.blockList + ',' + username
     });    
