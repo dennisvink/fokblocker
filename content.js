@@ -9,7 +9,6 @@ chrome.storage.sync.get({
   var script = "";
   var i;
 
-  
   $('.abo').click(function() {
     var username = $(this).parent().parent().parent().find('.username').text();
     chrome.storage.sync.set({
@@ -21,7 +20,7 @@ chrome.storage.sync.get({
   });
 
   for (i = 0; i < blockList.length; ++i) {
-    script = script + "setInterval(function() { $(\"* > [data-member='"+blockList[i]+"']\").hide(); $('a').filter(function(index) { return $(this).text() === \""+blockList[i]+"\"; }).parent().parent().html('Weggejorist en opgerot -- WAHRHEIT'); }, 250);";
+    script = script + "setInterval(function() { $(\"* > [data-member='"+blockList[i]+"']\").hide(); $('a').filter(function(index) { return $(this).text() === \""+blockList[i]+"\"; }).parent().parent().html('Weggejorist en opgerot -- WAHRHEIT'); $(\".username:contains('Zosk')\").each(function() { var replaced = $(this).html().replace(/Zosk/gi, \"Zork\"); $(this).html(replaced); }); }, 250);";
   }
 
   var scriptElement = document.createElement("script");
