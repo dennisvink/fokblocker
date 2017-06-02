@@ -1,6 +1,3 @@
-var refresh=8;
-var eventname="";
-
 chrome.storage.sync.get({
   blockList: 'maffehenkie'
 }, function(items) {
@@ -20,7 +17,9 @@ chrome.storage.sync.get({
   });
 
   for (i = 0; i < blockList.length; ++i) {
-    script = script + "setInterval(function() { $(\"* > [data-member='"+blockList[i]+"']\").hide(); $('a').filter(function(index) { return $(this).text() === \""+blockList[i]+"\"; }).parent().parent().html('Weggejorist en opgerot -- WAHRHEIT'); $(\".username:contains('Zosk')\").each(function() { var replaced = $(this).html().replace(/Zosk/gi, \"Zork\"); $(this).html(replaced); }); }, 250);";
+    if ($.trim(blockList[i]).length > 0) {
+      script = script + "setInterval(function() { $(\"* > [data-member='"+blockList[i]+"']\").hide(); $('a').filter(function(index) { return $(this).text() === \""+blockList[i]+"\"; }).parent().parent().html('Weggejorist en opgerot -- WAHRHEIT'); }, 250);";
+    }
   }
 
   var scriptElement = document.createElement("script");
